@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface ProductSupplierRepositry extends JpaRepository<ProductSupplier, Integer>  {
+public interface ProductSupplierRepository extends JpaRepository<ProductSupplier, Integer>  {
 
 	@Query("SELECT p FROM productsupplier p where p.partNo = :partNo")
 	Product findProductSupplierByProductId(@Param("partNo") String partNo);

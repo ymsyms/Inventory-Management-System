@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface OrderDetailRepositry extends JpaRepository<OrderDetail, Integer> {
+public interface OrderDetailRepository extends JpaRepository<OrderDetail, Integer> {
 
 	@Query("SELECT od FROM orderdetail od where od.partNo = :partNo")
 	Product findOrderDetailByPartNo(@Param("partNo") String partNo);

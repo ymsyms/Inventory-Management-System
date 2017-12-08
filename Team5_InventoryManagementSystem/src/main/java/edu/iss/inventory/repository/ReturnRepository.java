@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface ReturnRepositry extends JpaRepository<Return, Integer>  {
+public interface ReturnRepository extends JpaRepository<Return, Integer>  {
 
 	@Query("SELECT r FROM return r where r.returnId = :returnId")
 	Product findReturnByReturnId(@Param("returnId") String returnId);

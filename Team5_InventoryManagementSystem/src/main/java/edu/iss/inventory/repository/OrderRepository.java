@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface OrderRepositry extends JpaRepository<Order, Integer>  {
+public interface OrderRepository extends JpaRepository<Order, Integer>  {
 
 	@Query("SELECT o FROM order o where o.orderId = :orderId")
 	Product findOrderByOrderId(@Param("orderId") String orderId);
