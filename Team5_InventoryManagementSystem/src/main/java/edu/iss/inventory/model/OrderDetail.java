@@ -46,7 +46,7 @@ public class OrderDetail {
 	}
 
 	public void setPartNo(String partNo) {
-		partNo = partNo;
+		this.partNo = partNo;
 	}
 
 	public int getTransactionQty() {
