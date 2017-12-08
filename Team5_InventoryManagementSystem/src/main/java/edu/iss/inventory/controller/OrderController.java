@@ -28,7 +28,11 @@ public class OrderController {
 
 	@Autowired
 	private ProductService pService;
+	
+	@Autowired
+	private ProductValidator pValidator;
 
+	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public ModelAndView newOrder(HttpSession session) {
 
@@ -41,31 +45,18 @@ public class OrderController {
 		//return "order.jsp"
 		return new ModelAndView("order");
 	}
-
+	
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
-	public ModelAndView addProduct(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView("order");
+	public ModelAndView newOrder(HttpSession session) {
+
+		//get insufficient product list
+		List<Product> plist = pService.findInsufficientProduct();
+		
+		//add insufficient product list to session hashmap
+		oService.addProductListToHashmap(plist, session);
+		
+		//return "order.jsp"
+		return new ModelAndView("order");
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ModelAndView userListPage() {
-
-	}
-
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-	public ModelAndView editUserPage(@PathVariable String id) {
-
-	}
-
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-	public ModelAndView editUser(@ModelAttribute @Valid User user, BindingResult result, @PathVariable String id,
-			final RedirectAttributes redirectAttributes) throws UserNotFound {
-
-	}
-
-	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-	public ModelAndView deleteUser(@PathVariable String id, final RedirectAttributes redirectAttributes)
-			throws UserNotFound {
-
-	}
 }
