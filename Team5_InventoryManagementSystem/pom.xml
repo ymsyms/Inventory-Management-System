@@ -3,10 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>edu.iss.inventory</groupId>
+	<groupId>sg.edu.iss.team5</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<description>CATS APPLICATION USING SPRING MVC JPA HIBERNATE</description>
+	<description>ISS Team 5 Stockist Inventory Management System</description>
+	<name>Stocklist</name>
+	<artifactId>Team5InventorySystem</artifactId>
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
@@ -17,6 +19,7 @@
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 		<mysql-connector.version>5.1.40</mysql-connector.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<web.version>7.0</web.version>
 		<servlet.version>3.1.0</servlet.version>
 		<jsp.version>2.3.1</jsp.version>
 		<jstl.version>1.2</jstl.version>
@@ -107,6 +110,16 @@
 			<version>${commons-dbcp.version}</version>
 		</dependency>
 
+		<!-- Standard Web Container -->
+		<!-- https://mvnrepository.com/artifact/javax/javaee-web-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>${web.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
 		<!-- Web -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -188,8 +201,4 @@
 		</plugins>
 
 	</build>
-
-
-	<name>Stocklist</name>
-	<artifactId>inventory</artifactId>
 </project>
