@@ -1,5 +1,6 @@
 package edu.iss.inventory.model;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,11 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-<<<<<<< HEAD
 @Table(name="user")
-=======
-@Table(name = "user")
->>>>>>> branch 'master' of https://github.com/ymsyms/iss_team5_InventorySystem.git
 public class User {
 	
 	/** Attributes for Course **/
@@ -20,6 +17,7 @@ public class User {
 	@Column(name = "userId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
+	@Basic
 	@Column(name = "userName")
 	private String userName;
 	@Column(name = "password")
@@ -28,7 +26,7 @@ public class User {
 	private String userRole;
 	
 	public User() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 	
 	public  User(int userId) {
