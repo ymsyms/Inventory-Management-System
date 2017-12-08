@@ -1,4 +1,4 @@
-package edu.iss.inventory.controller;
+/*package edu.iss.inventory.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.iss.inventory.model.Product;
 import edu.iss.inventory.repository.ProductRepository;
-
+import edu.iss.inventory.service.ProductService;
+import edu.iss.inventory.service.ProductSupplierService;
 
 
 @RequestMapping(value="/admin/product")
@@ -33,24 +34,12 @@ public class ProductController {
 	@Autowired
 	private ProductService pService;
 	@Autowired
-	private ProductSupplierService psService;
- 	
-	//private ProductValidator pValidator;
- 	
- 	//@InitBinder("product")
-	//private void initDepartmentBinder(WebDataBinder binder) {
-	//	binder.addValidators(pValidator);
-	//}
-	/**
-	 * PRODUCT CRUD OPERATIONS
-	 * 
-	 * @return
-	 */
-
+	private ProductSupplierService psService; 	
+	
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView newProductPage() {
 		ModelAndView mav = new ModelAndView("product-new", "product", new Product());
-		mav.addObject("pidlist", pService.findAllProductIDs());
+		mav.addObject("pidlist", pService.findAllProducts());
 		return mav;
 	}
 
@@ -62,7 +51,7 @@ public class ProductController {
 			return new ModelAndView("product-new");
 
 		ModelAndView mav = new ModelAndView();
-		String message = "New product " + product.getProductId() + " was successfully created.";
+		String message = "New product " + product.getPartNo() + " was successfully created.";
 
 		pService.createProduct(product);
 		mav.setViewName("redirect:/admin/product/list");
@@ -79,17 +68,12 @@ public class ProductController {
 		return mav;
 	}
 	
-
-	
-	
-	
-
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public ModelAndView editProductPage(@PathVariable String id) {
 		ModelAndView mav = new ModelAndView("product-edit");
 		Product product = pService.findProduct(id);
 		mav.addObject("product", product);
-		mav.addObject("pidlist", pService.findAllProductIDs());
+		mav.addObject("pidlist", pService.findAllProducts());
 		return mav;
 	}
 	
@@ -129,4 +113,4 @@ public class ProductController {
 		redirectAttributes.addFlashAttribute("message", message);
 		return mav;
 
-}
+}*/

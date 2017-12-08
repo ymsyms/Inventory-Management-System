@@ -10,8 +10,6 @@ public interface ProductService {
 
 	ArrayList<Product> findAllProducts();
 
-	Product findProduct(Integer pNo);
-
 	Product createProduct(Product prd);
 
 	Product changeProduct(Product prd);
