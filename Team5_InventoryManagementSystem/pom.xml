@@ -6,7 +6,7 @@
 	<groupId>edu.iss.inventory</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<description>CATS APPLICATION USING SPRING MVC JPA HIBERNATE</description>
+	<description>Inventory APPLICATION USING SPRING MVC JPA HIBERNATE</description>
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
@@ -150,6 +150,14 @@
 			<artifactId>sitemesh</artifactId>
 			<version>${sitemesh.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>
