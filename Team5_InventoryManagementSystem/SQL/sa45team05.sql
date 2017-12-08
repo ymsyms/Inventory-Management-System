@@ -221,13 +221,13 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sa45team05`;
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (001, 'L.Mix Industries', '92341524');
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (002, 'CL Autos', '22913701');
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (003, 'Demi.L Spare Parts', '64823321');
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (004, 'David G. Service & N.M Auto Parts', '24331161');
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (005, 'Karmin Autos Accessories', '45829352');
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (006, 'Charli XCX Supplier Co.', '34455352');
-INSERT INTO `supplier` (`supplierId`, `supplierName`, `supplierContactNo`) VALUES (007, 'R.Paul Autos Industries', '31981417');
+INSERT INTO `supplier` (`supplierName`, `supplierContactNo`) VALUES ('L.Mix Industries', '92341524');
+INSERT INTO `supplier` (`supplierName`, `supplierContactNo`) VALUES ('CL Autos', '22913701');
+INSERT INTO `supplier` (`supplierName`, `supplierContactNo`) VALUES ('Demi.L Spare Parts', '64823321');
+INSERT INTO `supplier` ( `supplierName`, `supplierContactNo`) VALUES ('David G. Service & N.M Auto Parts', '24331161');
+INSERT INTO `supplier` (`supplierName`, `supplierContactNo`) VALUES ('Karmin Autos Accessories', '45829352');
+INSERT INTO `supplier` ( `supplierName`, `supplierContactNo`) VALUES ('Charli XCX Supplier Co.', '34455352');
+INSERT INTO `supplier` (`supplierName`, `supplierContactNo`) VALUES ('R.Paul Autos Industries', '31981417');
 
 COMMIT;
 
@@ -273,25 +273,25 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sa45team05`;
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-01', S002, 15, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-02', S002, 17, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-03', S002, 15, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-01', S007, 10, 25);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-02', S004, 15, 20);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-02', S003, 16, 16);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2345HB-SIL', S004, 16, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2345HB-SIL', S005, 14, 18);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2345HB-BLK', S005, 14, 18);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2458HB-SIL', S001, 23, 10);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2460HC-SIL', S001, 24, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('21566VW-B01', S006, 56, 10);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('21566VW-B01', S007, 50, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('02367VW-B03', S007, 20, 20);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('CB03VW', S006, 25, 10);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('CD022VWK', S005, 12, 15);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('MN0234B-SIL', S004, 13, 20);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01236MNHL', S004, 20, 30);
-INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('MN0234B-SIL', S002, 19, 50);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-01', 2, 15, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-02', 2, 17, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-03', 2, 15, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-01', 7, 10, 25);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-02', 4, 15, 20);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01234-02', 3, 16, 16);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2345HB-SIL', 4, 16, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2345HB-SIL', 5, 14, 18);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2345HB-BLK', 5, 14, 18);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2458HB-SIL', 1, 23, 10);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('2460HC-SIL', 1, 24, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('21566VW-B01', 6, 56, 10);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('21566VW-B01', 7, 50, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('02367VW-B03', 7, 20, 20);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('CB03VW', 6, 25, 10);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('CD022VWK', 5, 12, 15);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('MN0234B-SIL', 4, 13, 20);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('01236MNHL', 4, 20, 30);
+INSERT INTO `productsupplier` (`partNo`, `supplierId`, `unitPrice`, `minimumReorderQty`) VALUES ('MN0234B-SIL', 2, 19, 50);
 
 COMMIT;
 
@@ -301,8 +301,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sa45team05`;
-INSERT INTO `return` (`returnId`, `partNo`, `returnQty`, `returnDate`) VALUES (R170001, '2345HB-SIL', 2, '23/2/2017');
-INSERT INTO `return` (`returnId`, `partNo`, `returnQty`, `returnDate`) VALUES (R170002, 'MN0234B-SIL', 4, '26/2/2017');
+INSERT INTO `return` (`partNo`, `returnQty`, `returnDate`) VALUES ('2345HB-SIL', 2, '2017-02-23');
+INSERT INTO `return` (`partNo`, `returnQty`, `returnDate`) VALUES ('MN0234B-SIL', 4, '2017-02-26');
 
 COMMIT;
 
@@ -312,12 +312,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sa45team05`;
-INSERT INTO `transaction` (`transactionId`, `transactionDate`, `userId`, `customerName`) VALUES (170001, '23/1/2017', 'runzz23', 'Mdm. Zanne');
-INSERT INTO `transaction` (`transactionId`, `transactionDate`, `userId`, `customerName`) VALUES (170002, '24/1/2017', 'kk234', 'I.M.Sam');
-INSERT INTO `transaction` (`transactionId`, `transactionDate`, `userId`, `customerName`) VALUES (170003, '28/2/2017', 'runzz23', 'Esma Samanda');
-INSERT INTO `transaction` (`transactionId`, `transactionDate`, `userId`, `customerName`) VALUES (170004, '29/5/2017', 'sunm23', ' HRH Magical Princess');
-INSERT INTO `transaction` (`transactionId`, `transactionDate`, `userId`, `customerName`) VALUES (170005, '30/7/2017', 'kk234', 'JorJor');
-INSERT INTO `transaction` (`transactionId`, `transactionDate`, `userId`, `customerName`) VALUES (170006, '31/7/2017', 'sunm23', 'Edwin');
+INSERT INTO `transaction` (`transactionDate`, `userId`, `customerName`) VALUES ('2017-02-23', 'runzz23', 'Mdm. Zanne');
+INSERT INTO `transaction` (`transactionDate`, `userId`, `customerName`) VALUES ('2017-02-23', 'kk234', 'I.M.Sam');
+INSERT INTO `transaction` ( `transactionDate`, `userId`, `customerName`) VALUES ('2017-02-25', 'runzz23', 'Esma Samanda');
+INSERT INTO `transaction` (`transactionDate`, `userId`, `customerName`) VALUES ('2017-02-26', 'sunm23', ' HRH Magical Princess');
+INSERT INTO `transaction` (`transactionDate`, `userId`, `customerName`) VALUES ('2017-02-27', 'kk234', 'JorJor');
+INSERT INTO `transaction` (`transactionDate`, `userId`, `customerName`) VALUES ('2017-02-28', 'sunm23', 'Edwin');
 
 COMMIT;
 
@@ -327,15 +327,16 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sa45team05`;
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170001, '01234-01', 3);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170001, 'MN0234B-SIL', 1);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170002, '01236MNHL', 2);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170003, '01234-01', 2);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170003, 'MN0234B-SIL', 3);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170004, 'CD022VWK', 2);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170005, '21566VW-B01', 1);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170005, '2460HC-SIL', 2);
-INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (170006, 'MN0234B-SIL', 3);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (1, '01234-01', 3);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (1, 'MN0234B-SIL', 1);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (2, '01236MNHL', 2);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (3, '01234-01', 2);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (3, 'MN0234B-SIL', 3);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (4, 'CD022VWK', 2);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (5, '21566VW-B01', 1);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (5, '2460HC-SIL', 2);
+INSERT INTO `transactiondetails` (`transactionId`, `partNo`, `transactionQty`) VALUES (6, 'MN0234B-SIL', 3);
 
 COMMIT;
+
 
