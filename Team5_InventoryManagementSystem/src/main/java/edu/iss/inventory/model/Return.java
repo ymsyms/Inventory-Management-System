@@ -1,5 +1,6 @@
 package edu.iss.inventory.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,14 +18,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "return")
-public class Return {
+public class Return implements Serializable{
 	@Id
 	@Column(name = "returnId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int returnId;
 	@ManyToOne
 	@JoinColumn(name = "partNo")
-	private String partNo;
+	private Product product;
 	@Column(name = "returnQty")
 	private int returnQty;
 	@Temporal(TemporalType.DATE)
@@ -37,45 +38,55 @@ public class Return {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Return(int returnId, String partNo, int returnQty, Date returnDate) {
+	
+	public Return(int returnId, Product product, int returnQty, Date returnDate) {
 		super();
 		this.returnId = returnId;
-		this.partNo = partNo;
+		this.product = product;
 		this.returnQty = returnQty;
 		this.returnDate = returnDate;
 	}
+
 
 	public int getReturnId() {
 		return returnId;
 	}
 
+
 	public void setReturnId(int returnId) {
 		this.returnId = returnId;
 	}
 
-	public String getPartNo() {
-		return partNo;
+
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setPartNo(String partNo) {
-		this.partNo = partNo;
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
+
 
 	public int getReturnQty() {
 		return returnQty;
 	}
 
+
 	public void setReturnQty(int returnQty) {
 		this.returnQty = returnQty;
 	}
+
 
 	public Date getReturnDate() {
 		return returnDate;
 	}
 
+
 	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
 	}
+
 
 	@Override
 	public int hashCode() {

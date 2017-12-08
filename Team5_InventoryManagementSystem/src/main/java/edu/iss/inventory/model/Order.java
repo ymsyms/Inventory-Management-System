@@ -28,22 +28,22 @@ public class Order {
 	private Date orderDate;
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private String userId;
+	private  User user;
 	@ManyToOne
 	@JoinColumn(name = "supplierId")
-	private int supplierId;
+	private Supplier supplier;
 
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(int orderId, Date orderDate, String userId, int supplierId) {
+	public Order(int orderId, Date orderDate, User user, Supplier supplier) {
 		super();
 		this.orderId = orderId;
 		this.orderDate = orderDate;
-		this.userId = userId;
-		this.supplierId = supplierId;
+		this.user = user;
+		this.supplier = supplier;
 	}
 
 	public int getOrderId() {
@@ -62,20 +62,20 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	public String getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public int getSupplierId() {
-		return supplierId;
+	public Supplier getSupplier() {
+		return supplier;
 	}
 
-	public void setSupplierId(int supplierId) {
-		this.supplierId = supplierId;
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
 	}
 
 	@Override

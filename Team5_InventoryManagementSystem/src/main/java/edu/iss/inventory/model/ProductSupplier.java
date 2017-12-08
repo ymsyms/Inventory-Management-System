@@ -1,5 +1,7 @@
 package edu.iss.inventory.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "productsupplier")
-public class ProductSupplier {
+public class ProductSupplier implements Serializable{
 	@Id
 	@Column(name = "partNo")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

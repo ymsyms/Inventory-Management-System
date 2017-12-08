@@ -1,5 +1,7 @@
 package edu.iss.inventory.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "transactiondetails")
-public class TransactionDeatils {
+public class TransactionDetails implements Serializable{
 	@Id
 	@Column(name = "transactionId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +23,11 @@ public class TransactionDeatils {
 	@Column(name = "transactionQty")
 	private int transactionQty;
 
-	public TransactionDeatils() {
+	public TransactionDetails() {
 		super();
 	}
 
-	public TransactionDeatils(int transactionId, String partNo, int transactionQty) {
+	public TransactionDetails(int transactionId, String partNo, int transactionQty) {
 		super();
 		this.transactionId = transactionId;
 		this.partNo = partNo;
@@ -73,7 +75,7 @@ public class TransactionDeatils {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TransactionDeatils other = (TransactionDeatils) obj;
+		TransactionDetails other = (TransactionDetails) obj;
 		if (partNo == null) {
 			if (other.partNo != null)
 				return false;
