@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "transactiondetails")
-public class TransactionDeatils {
+@Table(name = "transactiondetail")
+public class TransactionDeatil {
 	@Id
 	@Column(name = "transactionId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,11 @@ public class TransactionDeatils {
 	@Column(name = "transactionQty")
 	private int transactionQty;
 
-	public TransactionDeatils() {
+	public TransactionDeatil() {
 		super();
 	}
 
-	public TransactionDeatils(int transactionId, String partNo, int transactionQty) {
+	public TransactionDeatil(int transactionId, String partNo, int transactionQty) {
 		super();
 		this.transactionId = transactionId;
 		this.partNo = partNo;
@@ -73,7 +73,7 @@ public class TransactionDeatils {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TransactionDeatils other = (TransactionDeatils) obj;
+		TransactionDeatil other = (TransactionDeatil) obj;
 		if (partNo == null) {
 			if (other.partNo != null)
 				return false;
