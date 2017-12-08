@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "transactiondetail")
-public class TransactionDeatil {
+public class TransactionDetail {
 	@Id
 	@Column(name = "transactionId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +21,11 @@ public class TransactionDeatil {
 	@Column(name = "transactionQty")
 	private int transactionQty;
 
-	public TransactionDeatil() {
+	public TransactionDetail() {
 		super();
 	}
 
-	public TransactionDeatil(int transactionId, String partNo, int transactionQty) {
+	public TransactionDetail(int transactionId, String partNo, int transactionQty) {
 		super();
 		this.transactionId = transactionId;
 		this.partNo = partNo;
@@ -73,7 +73,7 @@ public class TransactionDeatil {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TransactionDeatil other = (TransactionDeatil) obj;
+		TransactionDetail other = (TransactionDetail) obj;
 		if (partNo == null) {
 			if (other.partNo != null)
 				return false;
