@@ -16,7 +16,7 @@ public class User {
 	@Id
 	@Column(name = "userId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int userId;
+	private String userId;
 	@Basic
 	@Column(name = "userName")
 	private String userName;
@@ -29,11 +29,11 @@ public class User {
 		super();
 	}
 	
-	public  User(int userId) {
+	public  User(String userId) {
 		this.userId = userId;
 	}
 
-	public User(int userId, String userName, String password, String userRole) {
+	public User(String userId, String userName, String password, String userRole) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -41,11 +41,11 @@ public class User {
 		this.userRole = userRole;
 	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 

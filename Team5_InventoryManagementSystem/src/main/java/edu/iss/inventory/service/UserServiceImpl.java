@@ -14,10 +14,10 @@ public class UserServiceImpl implements UserService{
 	@Resource
 	UserRepository userRepository;
 	
-//	@Override
-//	@Transactional
-//	public User getUserByUserId(String userId) {
-//		return userRepository.findUserByUserId(userId);
-//
-//	}	
+	@Override
+	@Transactional
+	public User getUserByUserId(String userId) {
+		return userRepository.findUserByUserId(userId);
+
+	}	
 }
