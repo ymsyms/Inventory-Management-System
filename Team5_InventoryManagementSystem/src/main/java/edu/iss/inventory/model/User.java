@@ -8,7 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+<<<<<<< HEAD
+@Table(name="user")
+=======
 @Table(name = "user")
+>>>>>>> branch 'master' of https://github.com/ymsyms/iss_team5_InventorySystem.git
 public class User {
 	
 	/** Attributes for Course **/
