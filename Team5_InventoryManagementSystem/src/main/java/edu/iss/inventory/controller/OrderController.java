@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,36 +29,22 @@ public class OrderController {
 	@Autowired
 	private ProductService pService;
 
-	/**
-	 * USER CRUD OPERATIONS
-	 *
-	 * @return
-	 */
-
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
-	public ModelAndView newOrder() {
-		ModelAndView mav = new ModelAndView("order");
-		mav.addObject("productList", pService.findInsufficientProduct());
-		return mav;
+	public ModelAndView newOrder(HttpSession session) {
+
+		//get insufficient product list
+		List<Product> plist = pService.findInsufficientProduct();
+		
+		//add insufficient product list to session hashmap
+		oService.addProductListToHashmap(plist, session);
+		
+		//return "order.jsp"
+		return new ModelAndView("order");
 	}
 
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public ModelAndView addProduct(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("order");
-		if(input productId is valid) {
-
-		}
-		else {
-			// go to orderPage and load hashmap
-		}
-		if(got session got order hashmap) {
-			//check if the partId is valid
-			//load data from hashmap
-		}
-		else {
-			//load the data from productService
-		}
-		mav.addObject("product", pService.findProductById());
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
