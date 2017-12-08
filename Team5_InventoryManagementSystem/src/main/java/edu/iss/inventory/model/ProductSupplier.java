@@ -7,9 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
+@IdClass(ProductSupplierId.class)
 @Table(name = "productsupplier")
 public class ProductSupplier implements Serializable{
 	/**
@@ -23,7 +25,7 @@ public class ProductSupplier implements Serializable{
 	@Id
 	@Column(name = "supplierId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int supplierId;
+	private String supplierId;
 	@Column(name = "unitPrice")
 	private double unitPrice;
 	@Column(name = "minimumReorderQty")
@@ -34,7 +36,7 @@ public class ProductSupplier implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductSupplier(String partNo, int supplierId, double unitPrice, int minimumReorderQty) {
+	public ProductSupplier(String partNo, String supplierId, double unitPrice, int minimumReorderQty) {
 		super();
 		this.partNo = partNo;
 		this.supplierId = supplierId;
@@ -50,11 +52,11 @@ public class ProductSupplier implements Serializable{
 		this.partNo = partNo;
 	}
 
-	public int getSupplierId() {
+	public String getSupplierId() {
 		return supplierId;
 	}
 
-	public void setSupplierId(int supplierId) {
+	public void setSupplierId(String supplierId) {
 		this.supplierId = supplierId;
 	}
 
@@ -74,12 +76,16 @@ public class ProductSupplier implements Serializable{
 		this.minimumReorderQty = minimumReorderQty;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((partNo == null) ? 0 : partNo.hashCode());
-		result = prime * result + supplierId;
+		result = prime * result + ((supplierId == null) ? 0 : supplierId.hashCode());
 		return result;
 	}
 
@@ -97,9 +103,18 @@ public class ProductSupplier implements Serializable{
 				return false;
 		} else if (!partNo.equals(other.partNo))
 			return false;
-		if (supplierId != other.supplierId)
+		if (supplierId == null) {
+			if (other.supplierId != null)
+				return false;
+		} else if (!supplierId.equals(other.supplierId))
 			return false;
 		return true;
 	}
+
+	
+	
+	
+
+	
 
 }
