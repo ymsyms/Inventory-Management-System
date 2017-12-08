@@ -9,8 +9,11 @@ import edu.iss.inventory.model.Product;
 public interface ProductRepository extends JpaRepository<Product, Integer>  {
 
 	@Query("SELECT p FROM product p where p.partNo = :partNo")
-	Product findProductById(@Param("partNo") String partNo);
+	Product findProductByPartNo(@Param("partNo") String partNo);
 	
 	@Query("SELECT p FROM product p where p.carDealer = :carDealer")
 	Product findProductByCarDealer(@Param("carDealer") String carDealer);	
+	
+	@Query("SELECT p FROM product p where p.partNo = :partNo and p.carDealer = :carDealer")
+	Product findProductByDealerNPartNo(@Param("partNo") String partNo, @Param("carDealer") String carDealer);
 }
