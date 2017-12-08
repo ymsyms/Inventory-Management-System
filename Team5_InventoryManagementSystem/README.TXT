@@ -8,16 +8,5 @@ README.TXT
 
 The program starts in URL:
 
-http://localhost:8080/cats/home/login
+http://localhost:8080/inventory/login
 
-For Normal Staff Role
-Use user name 'dilbert' password 'dilbert'
-Use user name 'alice' password 'alice'
-
-For Normal Manager Role
-Use user name 'pointy' password 'pointy'
-
-For Normal Admin Role
-Use user name 'catbert' password 'catbert'
-
-// test commit
