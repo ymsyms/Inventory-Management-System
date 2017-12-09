@@ -10,12 +10,12 @@ public interface ProductSupplierService {
 
 	ArrayList<ProductSupplier> findAllProductSuppliers();
 
-	ProductSupplier findProductSupplier(Integer pNo);
-
 	ProductSupplier createProductSupplier(ProductSupplier prd);
 
 	ProductSupplier changeProductSupplier(ProductSupplier prd);
 
 	void removeProductSupplier(ProductSupplier prd);
+
+	ProductSupplier findProductSuppliers(Integer supplierId, String partNo);
 
 }

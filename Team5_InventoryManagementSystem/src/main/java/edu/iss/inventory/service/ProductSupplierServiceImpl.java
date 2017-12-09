@@ -32,8 +32,8 @@ public class ProductSupplierServiceImpl implements ProductSupplierService {
 	 */
 	@Override
 	@Transactional
-	public ProductSupplier findProductSupplier(Integer pNo) {
-		return prdSupRepo.findOne(pNo);
+	public ProductSupplier findProductSuppliers(Integer supplierId,String partNo) {
+		return prdSupRepo.findProductSupplier(supplierId, partNo);
 	}
 	
 	/* (non-Javadoc)
