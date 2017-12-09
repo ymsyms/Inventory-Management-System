@@ -1,7 +1,0 @@
-edu\iss\inventory\init\Initializer.class
-edu\iss\inventory\service\UserService.class
-edu\iss\inventory\controller\LoginController.class
-edu\iss\inventory\model\User.class
-edu\iss\inventory\repository\UserRepository.class
-edu\iss\inventory\init\WebAppConfig.class
-edu\iss\inventory\service\UserServiceImpl.class

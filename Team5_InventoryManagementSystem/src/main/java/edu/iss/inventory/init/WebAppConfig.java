@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +33,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
+@EnableAutoConfiguration
 @ComponentScan(basePackages="edu.iss.inventory")
 @PropertySource({ "classpath:application.properties",
 		"classpath:/i18n/messages.properties" })
