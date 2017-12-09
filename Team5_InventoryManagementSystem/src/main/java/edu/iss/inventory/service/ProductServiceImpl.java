@@ -55,9 +55,9 @@ public class ProductServiceImpl implements ProductService {
 		if (product.getPartNo() != null) {
 			l.add(prdRepo.findProductByPartNo(product.getPartNo()));
 		} else if (product.getCarDealer() != null && product.getColor() != null) {
-			l.add(prdRepo.findProductByDealerNColor(product.getColor(), product.getCarDealer()));
+			l = prdRepo.findProductByDealerNColor(product.getColor(), product.getCarDealer());
 		} else {
-			l.add(prdRepo.findProductByCarDealer(product.getCarDealer()));
+			l = prdRepo.findProductByCarDealer(product.getCarDealer());
 		}
 		return l;
 	}

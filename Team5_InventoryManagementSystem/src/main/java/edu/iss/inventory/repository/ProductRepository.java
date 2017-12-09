@@ -11,15 +11,15 @@ import edu.iss.inventory.model.Product;
 public interface ProductRepository extends JpaRepository<Product, Integer>  {
 
 	
-	@Query("SELECT p FROM product p where p.partNo = :partNo")
+	@Query("SELECT p FROM Product p where p.partNo = :partNo")
 	Product findProductByPartNo(@Param("partNo") String partNo);
 	
-	@Query("SELECT p FROM product p where p.carDealer = :carDealer")
-	Product findProductByCarDealer(@Param("carDealer") String carDealer);	
+	@Query("SELECT p FROM Product p where p.carDealer = :carDealer")
+	ArrayList<Product> findProductByCarDealer(@Param("carDealer") String carDealer);	
 	
-	@Query("SELECT p FROM product p where p.color = :color and p.carDealer = :carDealer")
-	Product findProductByDealerNColor(@Param("color") String color, @Param("carDealer") String carDealer);
+	@Query("SELECT p FROM Product p where p.color = :color and p.carDealer = :carDealer")
+	ArrayList<Product> findProductByDealerNColor(@Param("color") String color, @Param("carDealer") String carDealer);
 	
-	@Query("SELECT p FROM product p where p.avaliableQty <= p.reorderLevel")
+	@Query("SELECT p FROM Product p where p.avaliableQty <= p.reorderLevel")
 	ArrayList<Product> findProductsToReorder();
 }
