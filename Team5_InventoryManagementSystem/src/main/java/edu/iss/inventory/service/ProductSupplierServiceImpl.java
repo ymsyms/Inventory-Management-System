@@ -32,7 +32,7 @@ public class ProductSupplierServiceImpl implements ProductSupplierService {
 	 */
 	@Override
 	@Transactional
-	public ProductSupplier findProductSuppliers(Integer supplierId,String partNo) {
+	public ProductSupplier findProductSuppliers(String supplierId,String partNo) {
 		return prdSupRepo.findProductSupplier(supplierId, partNo);
 	}
 	

@@ -16,6 +16,6 @@ public interface ProductSupplierService {
 
 	void removeProductSupplier(ProductSupplier prd);
 
-	ProductSupplier findProductSuppliers(Integer supplierId, String partNo);
+	ProductSupplier findProductSuppliers(String supplierId, String partNo);
 
 }

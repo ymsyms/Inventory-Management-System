@@ -21,5 +21,5 @@ public interface ProductSupplierRepository extends JpaRepository<ProductSupplier
 	ArrayList<ProductSupplier> findProductSupplierBySupplierId(@Param("supplierId") Integer supplierId);
 
     @Query("SELECT p FROM productsupplier p where p.supplierId = :supplierId and p.partNo = :partNo")
-  	ProductSupplier findProductSupplier(@Param("supplierId") Integer supplierId,@Param("partNo") String partNo);
+  	ProductSupplier findProductSupplier(@Param("supplierId") String supplierId,@Param("partNo") String partNo);
 }
