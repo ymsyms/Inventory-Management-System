@@ -15,5 +15,9 @@ public interface ProductService {
 	Product changeProduct(Product prd);
 
 	void removeProduct(Product prd);
+	
+	Product findProducts(String id);
+	
+	ArrayList<Product> searchProduct(Product product);
 
 }
