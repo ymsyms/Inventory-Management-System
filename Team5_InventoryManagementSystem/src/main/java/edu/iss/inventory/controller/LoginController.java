@@ -41,7 +41,7 @@ public class LoginController {
 			// PUT CODE FOR SETTING SESSION ID
 			us.setSessionId(session.getId());
 			
-			mav = new ModelAndView("redirect:/staff/history");
+			mav = new ModelAndView("redirect:/product/home");
 		} else {
 			return mav;
 		}
