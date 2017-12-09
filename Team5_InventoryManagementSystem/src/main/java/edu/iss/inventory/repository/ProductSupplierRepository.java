@@ -9,10 +9,10 @@ import org.springframework.data.repository.query.Param;
 import edu.iss.inventory.model.ProductSupplier;
 
 public interface ProductSupplierRepository extends JpaRepository<ProductSupplier, Integer>  {
-
+//specified return type as array lists as multiple supplier will be returned per productID
 	@Query("SELECT p FROM productsupplier p where p.partNo = :partNo")
-	ProductSupplier findProductSupplierByProductId(@Param("partNo") String partNo);
-	
+	ArrayList<ProductSupplier> findProductSupplierByProductId(@Param("partNo") String partNo);
+	//specified return type as array lists as multiple supplier will be returned per SupplierID	
 	@Query("SELECT p FROM productsupplier p where p.supplierId = :supplierId")
-	ProductSupplier findProductSupplierBySupplierId(@Param("supplierId") String supplierId);
+	ArrayList<ProductSupplier> findProductSupplierBySupplierId(@Param("supplierId") String supplierId);
 }
