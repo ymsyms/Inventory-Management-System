@@ -1,7 +1,34 @@
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\model\User.java
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\repository\UserRepository.java
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\init\Initializer.java
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\service\UserServiceImpl.java
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\service\UserService.java
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\controller\LoginController.java
-C:\Users\Mo Mo\git\iss_team5_InventorySystem\Team5_InventoryManagementSystem\src\main\java\edu\iss\inventory\init\WebAppConfig.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/OrderDetail.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/Product.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/TransactionDetailId.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/Return.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/SupplierRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/OrderDetailRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/controller/OrderController.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/ProductSupplierService.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/controller/ProductController.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/Transaction.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/ProductSupplierRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/ProductService.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/UserServiceImpl.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/TransactionRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/OrderRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/TransactionDetail.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/ProductServiceImpl.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/UserService.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/ProductSupplierServiceImpl.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/ProductSupplierId.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/ReturnRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/TransactionDetailRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/service/OrderServiceImpl.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/init/Initializer.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/init/WebAppConfig.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/ProductSupplier.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/exception/DuplicatePartNumException.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/controller/LoginController.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/User.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/UserRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/controller/UserSession.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/repository/ProductRepository.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/Order.java
+/Users/cuirunze/git/iss_team5_InventorySystem/Team5_InventoryManagementSystem/src/main/java/edu/iss/inventory/model/Supplier.java

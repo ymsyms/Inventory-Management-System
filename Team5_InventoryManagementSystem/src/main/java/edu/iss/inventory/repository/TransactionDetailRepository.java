@@ -6,8 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import edu.iss.inventory.model.TransactionDetail;
+import edu.iss.inventory.model.TransactionDetailId;
 
-public interface TransactionDetailRepository extends JpaRepository<TransactionDetail, Integer>  {
+public interface TransactionDetailRepository extends JpaRepository<TransactionDetail, TransactionDetailId>  {
 
 	@Query("SELECT td FROM transactiondetail td where td.transactionId = :transactionId")
 	TransactionDetail findTransactionDetailsByTransactionId(@Param("transactionId") String transactionId);

@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import edu.iss.inventory.model.Product;
 
-public interface ProductRepository extends JpaRepository<Product, Integer>  {
+public interface ProductRepository extends JpaRepository<Product, String>  {
 
 	
 	@Query("SELECT p FROM product p where p.partNo = :partNo")
