@@ -1,5 +1,6 @@
-/*package edu.iss.inventory.controller;
+package edu.iss.inventory.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,23 +24,22 @@ import edu.iss.inventory.repository.ProductRepository;
 import edu.iss.inventory.service.ProductService;
 import edu.iss.inventory.service.ProductSupplierService;
 
-
-@RequestMapping(value="/admin/product")
+@RequestMapping(value = "/admin/product")
 @Controller
 public class ProductController {
-	
+
 	@Resource
 	ProductRepository prepo;
-	
+
 	@Autowired
 	private ProductService pService;
 	@Autowired
-	private ProductSupplierService psService; 	
-	
+	private ProductSupplierService psService;
+
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
 	public ModelAndView newProductPage() {
 		ModelAndView mav = new ModelAndView("product-new", "product", new Product());
-		mav.addObject("pidlist", pService.findAllProducts());
+		mav.addObject("productlist", pService.findAllProducts());
 		return mav;
 	}
 
@@ -47,8 +47,9 @@ public class ProductController {
 	public ModelAndView createNewProduct(@ModelAttribute @Valid Product product, BindingResult result,
 			final RedirectAttributes redirectAttributes) {
 
-		if (result.hasErrors())
+		if (result.hasErrors()){
 			return new ModelAndView("product-new");
+			}
 
 		ModelAndView mav = new ModelAndView();
 		String message = "New product " + product.getPartNo() + " was successfully created.";
@@ -63,31 +64,23 @@ public class ProductController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView productListPage() {
 		ModelAndView mav = new ModelAndView("product-list");
-		ArrayList<Product> productList = (ArrayList<Product>)prepo.findAll();
+		ArrayList<Product> productList = (ArrayList<Product>) prepo.findAll();
 		mav.addObject("productList", productList);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public ModelAndView editProductPage(@PathVariable String id) {
 		ModelAndView mav = new ModelAndView("product-edit");
-		Product product = pService.findProduct(id);
+		Product product = pService.findProducts(id);
 		mav.addObject("product", product);
-		mav.addObject("pidlist", pService.findAllProducts());
+		mav.addObject("productlist", pService.findAllProducts());
 		return mav;
 	}
-	
 
-
-	}
-	
-	
-	
-
-	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
 	public ModelAndView editProduct(@ModelAttribute @Valid Product product, BindingResult result,
-			@PathVariable String id, final RedirectAttributes redirectAttributes) throws ProductNotFound {
+			@PathVariable String id, final RedirectAttributes redirectAttributes) /* throws ProductNotFound */ {
 
 		if (result.hasErrors())
 			return new ModelAndView("product-edit");
@@ -102,15 +95,25 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-	public ModelAndView deleteEmployee(@PathVariable String id, final RedirectAttributes redirectAttributes)
-			throws ProductNotFound {
+	public ModelAndView deleteProduct(@PathVariable String id, final RedirectAttributes redirectAttributes)
+	/* throws ProductNotFound */ {
 
 		ModelAndView mav = new ModelAndView("redirect:/admin/product/list");
-		Product product = eService.findProduct(id);
+		Product product = pService.findProducts(id);
 		pService.removeProduct(product);
-		String message = "The product " + product.getProductId() + " was successfully deleted.";
+		String message = "The product " + product.getPartNo() + " was successfully deleted.";
 
 		redirectAttributes.addFlashAttribute("message", message);
 		return mav;
 
-}*/
+	}
+	@RequestMapping(value="/search/{product}",method=RequestMethod.GET)
+	public ModelAndView searchProduct(@PathVariable Product product,final RedirectAttributes redirectAttributes)
+	{
+		ModelAndView mav= new ModelAndView("redirect:/admin/product/list");
+		pService.searchProduct(product);
+		return mav;
+	}
+	
+	
+}

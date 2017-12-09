@@ -1,4 +1,4 @@
-/*package edu.iss.inventory.service;
+package edu.iss.inventory.service;
 
 import java.util.ArrayList;
 
@@ -12,52 +12,54 @@ import edu.iss.inventory.repository.ProductRepository;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
+
 	@Resource
 	private ProductRepository prdRepo;
 
-	 (non-Javadoc)
-	 * @see edu.iss.inventory.service.ProductService#findAllProducts()
-	 
 	@Override
 	@Transactional
 	public ArrayList<Product> findAllProducts() {
 		ArrayList<Product> l = (ArrayList<Product>) prdRepo.findAll();
 		return l;
-	}	
-	
-	public ArrayList<Product> findProducts(String id) {
-		ArrayList<Product> l = (ArrayList<Product>) prdRepo.findProductById(id);
+	}
+
+	@Override
+	@Transactional
+	public Product findProducts(String id) {
+		Product l = prdRepo.findProductByPartNo(id);
 		return l;
 	}
-	
-	
-	 (non-Javadoc)
-	 * @see edu.iss.inventory.service.ProductService#createProduct(edu.iss.inventory.model.Product)
-	 
+
 	@Override
 	@Transactional
 	public Product createProduct(Product prd) {
 		return prdRepo.saveAndFlush(prd);
 	}
-	
-	 (non-Javadoc)
-	 * @see edu.iss.inventory.service.ProductService#changeProduct(edu.iss.inventory.model.Product)
-	 
+
 	@Override
 	@Transactional
 	public Product changeProduct(Product prd) {
 		return prdRepo.saveAndFlush(prd);
 	}
-	
-	 (non-Javadoc)
-	 * @see edu.iss.inventory.service.ProductService#removeProduct(edu.iss.inventory.model.Product)
-	 
+
 	@Override
 	@Transactional
 	public void removeProduct(Product prd) {
 		prdRepo.delete(prd);
 	}
 
+	@Override
+	@Transactional
+	public ArrayList<Product> searchProduct(Product product) {
+		ArrayList<Product> l = new ArrayList<Product>();
+		if (product.getPartNo() != null) {
+			l.add(prdRepo.findProductByPartNo(product.getPartNo()));
+		} else if (product.getCarDealer() != null && product.getColor() != null) {
+			l.add(prdRepo.findProductByDealerNColor(product.getColor(), product.getCarDealer()));
+		} else {
+			l.add(prdRepo.findProductByCarDealer(product.getCarDealer()));
+		}
+		return l;
+	}
+
 }
-*/

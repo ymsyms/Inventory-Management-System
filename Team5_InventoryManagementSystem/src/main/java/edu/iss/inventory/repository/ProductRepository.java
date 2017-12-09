@@ -10,6 +10,7 @@ import edu.iss.inventory.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer>  {
 
+	
 	@Query("SELECT p FROM product p where p.partNo = :partNo")
 	Product findProductByPartNo(@Param("partNo") String partNo);
 	
