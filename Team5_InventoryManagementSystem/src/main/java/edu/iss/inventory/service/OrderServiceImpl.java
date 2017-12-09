@@ -2,7 +2,7 @@ package edu.iss.inventory.service;
 
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -66,6 +66,7 @@ public class OrderServiceImpl /* implements OrderService*/{
 		}
 		OrderDetail a = new OrderDetail(0,product.getPartNo(),toOrderQty);
 		return a;
+}
 }
 
 
